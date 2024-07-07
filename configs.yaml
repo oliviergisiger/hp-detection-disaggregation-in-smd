@@ -6,4 +6,4 @@ FILENAMES:
 DATA:
   MONTHS: ['2022-11']
   PATHS:
-    WEATHER: 'data/raw/ckw/weather.p'
+    WEATHER: '../data/raw/ckw/weather.p'

@@ -8,8 +8,8 @@ from data_preprocessing.adapter.ckw_sink import CKWFileSink
 
 MONTHS = configs.DATA.MONTHS
 PATH_WEATHER = configs.DATA.PATHS.WEATHER
-NILM_PATHS_IN_HP = [f'data/raw/ckw/{month}_hp_nilm_data_clean.p' for month in MONTHS]
-NILM_PATHS_IN_MASKED = [f'data/raw/ckw/{month}_hp_data_clean.p' for month in MONTHS]
+NILM_PATHS_IN_HP = [f'../data/raw/ckw/{month}_hp_disagg_data.p' for month in MONTHS]
+NILM_PATHS_IN_MASKED = [f'../data/raw/ckw/{month}_hp_data.p' for month in MONTHS]
 
 
 class PreProcessCKWDataNILM:
@@ -34,8 +34,8 @@ class PreProcessCKWDataNILM:
         df.loc[:, 'min_of_day'] = df.index.minute + df.index.hour * 60
         df.set_index('id', append=True, inplace=True)
 
-        self._sink.write_complete_file('data/clean/ckw/nilm', df)
-        self._sink.write_meta_file('data/clean/ckw/nilm', pd.Series(df.reset_index()['id'].unique()))
+        self._sink.write_complete_file('../data/clean/ckw/disaggregation', df)
+        self._sink.write_meta_file('../data/clean/ckw/disaggregation', pd.Series(df.reset_index()['id'].unique()))
 
 
 if __name__ == '__main__':

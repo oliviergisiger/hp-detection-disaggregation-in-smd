@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from domain import configs
+from app.domain import configs
 
 from data_preprocessing.adapter.ckw_source import CKWWeatherSource, CKWFileSource
 from data_preprocessing.adapter.ckw_sink import CKWFileSink
@@ -10,8 +10,8 @@ MONTHS = configs.DATA.MONTHS
 PATH_WEATHER = configs.DATA.PATHS.WEATHER
 
 # CLASSIFICATION
-PATHS_IN_HP = [f'data/raw/ckw/{month}_hp_data.p' for month in MONTHS]
-PATHS_IN_NO_HP = [f'data/raw/ckw/{month}_hp_negative_data.p' for month in MONTHS]
+PATHS_IN_HP = [f'../data/raw/ckw/{month}_hp_data.p' for month in MONTHS]
+PATHS_IN_NO_HP = [f'../data/raw/ckw/{month}_hp_negative_data.p' for month in MONTHS]
 
 
 class PreProcessCKWData:
@@ -38,8 +38,8 @@ class PreProcessCKWData:
         df_full['dow'] = df_full.timestamp.dt.dayofweek
         df_full.set_index('id', inplace=True)
 
-        self._sink.write_complete_file('data/clean/ckw/test_data', df_full)
-        self._sink.write_meta_file('data/clean/ckw/test_data', ids)
+        self._sink.write_complete_file('../data/clean/ckw/detection', df_full)
+        self._sink.write_meta_file('../data/clean/ckw/detection', ids)
 
     def _combine_load_data(self, paths):
         pass

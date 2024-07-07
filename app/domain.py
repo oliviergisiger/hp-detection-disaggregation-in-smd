@@ -8,5 +8,5 @@ def get_yaml(file):
     return DotMap(secret_dict)
 
 
-secrets = get_yaml('secrets.yaml')
-configs = get_yaml('configs.yaml')
+secrets = get_yaml('../secrets.yaml')
+configs = get_yaml('../configs.yaml')
