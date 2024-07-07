@@ -10,10 +10,8 @@ MONTHS = configs.DATA.MONTHS
 PATH_WEATHER = configs.DATA.PATHS.WEATHER
 
 # CLASSIFICATION
-PATHS_IN_HP = [f'data/raw/ckw/{month}_hp_data_new_clean.p' for month in MONTHS]
-PATHS_IN_NO_HP = [f'data/raw/ckw/{month}_hp_negative_data_new_clean.p' for month in MONTHS]
-
-
+PATHS_IN_HP = [f'data/raw/ckw/{month}_hp_data.p' for month in MONTHS]
+PATHS_IN_NO_HP = [f'data/raw/ckw/{month}_hp_negative_data.p' for month in MONTHS]
 
 
 class PreProcessCKWData:

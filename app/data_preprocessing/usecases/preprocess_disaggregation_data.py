@@ -34,8 +34,8 @@ class PreProcessCKWDataNILM:
         df.loc[:, 'min_of_day'] = df.index.minute + df.index.hour * 60
         df.set_index('id', append=True, inplace=True)
 
-        self._sink.write_complete_file('data/clean/ckw/nilm/datetime_info', df)
-        self._sink.write_meta_file('data/clean/ckw/nilm/datetime_info', pd.Series(df.reset_index()['id'].unique()))
+        self._sink.write_complete_file('data/clean/ckw/nilm', df)
+        self._sink.write_meta_file('data/clean/ckw/nilm', pd.Series(df.reset_index()['id'].unique()))
 
 
 if __name__ == '__main__':
