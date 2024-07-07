@@ -1,0 +1,17 @@
+# ignore data directory
+data/*
+model_application/data/*
+
+# ignore all csv/pickle files
+*.p
+*.csv
+
+# ide files
+.idea
+.DS_Store
+
+# ignore secrets
+secrets.yaml
+
+# keep folder structure
+!*/.gitkeep
