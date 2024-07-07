@@ -2,3 +2,8 @@
 FILENAMES:
   DATA: 'data.p'
   IDS: 'ids.p'
+
+DATA:
+  MONTHS: ['2022-11']
+  PATHS:
+    WEATHER: 'data/raw/ckw/weather.p'
