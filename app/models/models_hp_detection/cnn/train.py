@@ -1,5 +1,5 @@
 import pickle
-from models.models_hp_detection.cnn.cnn_hp_detection import TSCConvNet
+from models.models_hp_detection.cnn.model import TSCConvNet
 
 TRAIN_FILE = '../data/model_input/ckw/detection/ts_672_672_train.p'
 SAVE_MODEL_PATH = 'models/models_hp_detection/cnn/trained_models'

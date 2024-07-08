@@ -1,6 +1,6 @@
 import pickle
 from sklearn.metrics import roc_auc_score, classification_report
-from models.models_hp_detection.cnn.cnn_hp_detection import TSCConvNet
+from models.models_hp_detection.cnn.model import TSCConvNet
 
 LOAD_MODEL_PATH = 'models/models_hp_detection/cnn/trained_models/'
 MODEL = '20240708-063451_cnn_detection_672.h5'
