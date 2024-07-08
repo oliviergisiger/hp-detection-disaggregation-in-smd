@@ -12,7 +12,7 @@ NILM_PATHS_IN_HP = [f'../data/raw/ckw/{month}_hp_disagg_data.p' for month in MON
 NILM_PATHS_IN_MASKED = [f'../data/raw/ckw/{month}_hp_data.p' for month in MONTHS]
 
 
-class PreProcessCKWDataNILM:
+class PreProcessCKWDataDisAgg:
 
     def __init__(self, file_source: CKWFileSource, weather_source: CKWWeatherSource, sink: CKWFileSink):
         self._file_source = file_source
@@ -32,14 +32,14 @@ class PreProcessCKWDataNILM:
         df = pd.merge(df, df_weather, how='left', left_index=True, right_index=True)
         df['dow'] = df.index.dayofweek
         df.loc[:, 'min_of_day'] = df.index.minute + df.index.hour * 60
-        df.set_index('id', append=True, inplace=True)
+        df.set_index('id', inplace=True, drop=True)
 
         self._sink.write_complete_file('../data/clean/ckw/disaggregation', df)
         self._sink.write_meta_file('../data/clean/ckw/disaggregation', pd.Series(df.reset_index()['id'].unique()))
 
 
 if __name__ == '__main__':
-    usecase = PreProcessCKWDataNILM(
+    usecase = PreProcessCKWDataDisAgg(
         file_source=CKWFileSource(),
         weather_source=CKWWeatherSource(),
         sink=CKWFileSink()

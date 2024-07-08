@@ -1,6 +1,6 @@
 import pickle
 
-from models.models_hp_detection.baseline.baseline_model import BaselineModel
+from models.models_hp_detection.baseline.baseline_model import BaselineClassifier
 
 
 if __name__ == '__main__':
@@ -15,5 +15,5 @@ if __name__ == '__main__':
         f'\n\thp = 1: {y_train.sum()}\n\thp = 0: {y_train.shape[0] - y_train.sum()}'
     )
 
-    classifier = BaselineModel()
+    classifier = BaselineClassifier()
     classifier.train(X_train, y_train)

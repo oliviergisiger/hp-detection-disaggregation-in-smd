@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
-import pickle
 
 SAVE_MODEL_PATH = 'models/models_hp_detection/baseline/trained_models'
 
@@ -24,7 +23,7 @@ def metrics(pred, truth):
     return accuracy, precision, recall, f1
 
 
-class BaselineModel:
+class BaselineClassifier:
     model_path = SAVE_MODEL_PATH
 
     @staticmethod
