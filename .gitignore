@@ -1,10 +1,10 @@
 # ignore data directory
 data/*
-model_application/data/*
 
-# ignore all csv/pickle files
+# ignore all csv/pickle/h5 files
 *.p
 *.csv
+*.h5
 
 # ide files
 .idea

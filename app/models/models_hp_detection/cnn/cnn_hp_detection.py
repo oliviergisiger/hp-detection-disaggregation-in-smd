@@ -11,7 +11,7 @@ import numpy as np
 class TSCConvNet:
 
     def __init__(self, input_shape: tuple, num_classes: int, pooling: int,
-                 class_weights: [] = None, name: str = None):
+                 class_weights: [] = None, name: str = None, model_path: str = None):
         self.input_shape = input_shape[1:]
         self.num_classes = num_classes
         self.pooling = pooling
@@ -20,9 +20,10 @@ class TSCConvNet:
         self.optimizer = tf.keras.optimizers.legacy.Adam()
         self.loss = keras.losses.BinaryCrossentropy()
         self.class_weights = self.get_class_weights(class_weights)
+        self.model_path = model_path
 
     def _get_callbacks(self, **kwargs):
-        model_name = f'{self.model.name}_best_binary_acc.h5'
+        model_name = f'{self.model_path}/{self.model.name}_best_binary_acc.h5'
         return [
             keras.callbacks.ModelCheckpoint(model_name, save_best_only=True, monitor="val_binary_accuracy"),
             keras.callbacks.ReduceLROnPlateau(monitor='val_loss', min_lr=0.0001, patience=10)
@@ -73,8 +74,9 @@ class TSCConvNet:
                        validation_split=0.5,
                        callbacks=self._get_callbacks())
         if save:
-            model_file = f'{datetime.now().strftime("%Y%m%d-%H%M%S")}_{self.model.name}.h5'
-            scaler_file = f'{datetime.now().strftime("%Y%m%d-%H%M%S")}_{self.model.name}_scaler.p'
+            timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+            model_file = f'{self.model_path}/{timestamp}_{self.model.name}.h5'
+            scaler_file = f'{self.model_path}/{timestamp}_{self.model.name}_scaler.p'
             self.model.save(model_file)
             pickle.dump(self.x_scaler, open(scaler_file, 'wb'))
 

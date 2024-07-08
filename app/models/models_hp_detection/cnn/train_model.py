@@ -1,12 +1,12 @@
 import pickle
 from models.models_hp_detection.cnn.cnn_hp_detection import TSCConvNet
 
-train_file = 'ts_672_672_train.p'
-save_model_path = 'models/models_hp_detection/cnn/trained_models'
+TRAIN_FILE = '../data/model_input/ckw/detection/ts_672_672_train.p'
+SAVE_MODEL_PATH = 'models/models_hp_detection/cnn/trained_models'
 
 if __name__ == '__main__':
 
-    with open(f'../data/model_input/ckw/detection/{train_file}', 'rb') as data:
+    with open(TRAIN_FILE, 'rb') as data:
         x_train, y_train = pickle.load(data)
 
     print(
@@ -20,9 +20,10 @@ if __name__ == '__main__':
                             num_classes=2,
                             pooling=2,
                             class_weights=[1.0, 1.0],
-                            name=f'{save_model_path}/cnn_detection_672',
+                            name='cnn_detection_672',
+                            model_path=SAVE_MODEL_PATH
                             )
-    classifier.train(epochs=10, X=x_train, y=y_train, save=False)
+    classifier.train(epochs=10, X=x_train, y=y_train, save=True)
 
 
 
