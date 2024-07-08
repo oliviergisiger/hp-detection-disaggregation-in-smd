@@ -19,7 +19,8 @@ This includes minimal stages of preprocessing, model training and evaluation. Fu
 * Pipenv is used for packaging and needs to be installed first, e.g., ```pip install pipenv``` 
 * When code should be executed, make sure to set the working directory to the sources root of this repo: ```/app```
 * There are multiple usecaeses that can/must be runned:
-    * data preprocessing
+    * data preprocessing: transforms and cleans data, writes files to ```data/clean```
+    * dataloaders: transforms data into numpy objects that can be used for model training, writes these files to ```data/model_input```
     * detection model training
     * disaggregation model training   
 
