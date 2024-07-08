@@ -7,7 +7,7 @@ SAVE_MODEL_PATH = 'models/models_load_disaggregation/cnn/trained_models'
 
 
 if __name__ == '__main__':
-    with open('../data/model_input/ckw/disaggregation/ts_672_672_train.p', 'rb') as data:
+    with open(TRAIN_FILE, 'rb') as data:
         x_train, aux_train, y_train = pickle.load(data)
 
     print(
@@ -23,14 +23,3 @@ if __name__ == '__main__':
         model_path=SAVE_MODEL_PATH
     )
     disaggregator.train(epochs=20, X=x_train, aux=aux_train, y=y_train, save=True)
-
-
-"""
-training on subset of features: 
-all but load diff: 
-x_train[:, :, :4]
-
-val_root_mse: 0.2070, 192/192, 3 conv, (7, 5, 3 (32, 32, 32), pooling=1)
-val_root_mse: 0.1918, 96/96, 3 conv, (7, 5, 3 (32, 32, 32), pooling=1)
-
-"""

@@ -66,6 +66,12 @@ class DisaggregationConvNet:
         self.model.compile(self.optimizer, loss=self.loss,
                            metrics=[tf.keras.metrics.MeanSquaredError(),
                                     tf.keras.metrics.RootMeanSquaredError()])
+
+        history = self.model.fit([scaled_X, scaled_aux], y,
+                                 batch_size=32, epochs=epochs,
+                                 shuffle=True, validation_split=0.2,
+                                 callbacks=self._get_callbacks())
+
         if save:
             timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
             model_file = f'{self.model_path}/{timestamp}_{self.model.name}.h5'
