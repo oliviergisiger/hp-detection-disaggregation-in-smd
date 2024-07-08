@@ -23,9 +23,7 @@ This includes minimal stages of preprocessing, model training and evaluation. Fu
     * data preprocessing: transforms and cleans data, writes files to ```data/clean```
     * dataloaders: transforms data into numpy objects that can be used for model training, writes these files to ```data/model_input```
     * detection model training
-    * disaggregation model training   
-
-   ![Alt text](usecases.png?raw=true "usecases")
+    * disaggregation model training
   
 
 ### Notes on input data for heat pump detection
@@ -39,6 +37,11 @@ This includes minimal stages of preprocessing, model training and evaluation. Fu
   ids where the only device is measured is a heat pump (heat pump load)
 * Each of these pickled ```pandas.DataFrame```s contains columns: ```id, datetime, load```
 * Each ```pandas.DataFrame``` contains one month of data or the usecase must be reconfigured
+
+## How to run
+* Store raw files as described above in  ```data/raw```
+* Run usecases in ```app/data_preprocessing/usecases```
+* Select models, run dataloaders separately, train and evaluate models
 
 
 
