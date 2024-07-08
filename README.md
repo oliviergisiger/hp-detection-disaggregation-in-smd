@@ -14,6 +14,7 @@ This includes minimal stages of preprocessing, model training and evaluation. Fu
 |   |-- raw
 |   |-- clean
 |   |-- model_input
+|-- legacy
 ```
 ### Notes on usage
 * Pipenv is used for packaging and needs to be installed first, e.g., ```pip install pipenv``` 
