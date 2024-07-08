@@ -1,12 +1,37 @@
 # Heat Pump Detection and Load Disaggregation in Smart Meter Data
 
-### Basic repo structure:
+## Basic repo structure:
 ```
 |-- app
 |   |-- data_preparation
-|   |-- model_training 
+|   |-- models
+|   |   |-- detection
+|   |   |-- disaggregation
 |-- data
 |   |-- raw
 |   |-- clean
 |   |-- model_input
 ```
+### Notes on usage
+* Pipenv is used for packaging and needs to be installed first, e.g., ```pip install pipenv``` 
+* When code should be executed, make sure to set the working directory to the sources root of this repo: ```/app```
+* There are multiple usecaeses that can/must be runned:
+    * data preprocessing
+    * detection model training
+    * disaggregation model training
+   
+
+### Notes on input data for heat pump detection
+* Data is expected to be in the form of distinct pickeled ```pandas.DataFrame```s, corresponding to ids with a heat pump installed and
+  ids where no heat pump is installed. 
+* Each of these pickled ```pandas.DataFrame```s contains columns: ```id, datetime, load```
+* Each ```pandas.DataFrame``` contains one month of data or the usecase must be reconfigured
+
+### Notes on input data for heat pump load disaggregation
+* Data is expected to be in the form of distinct pickeled ```pandas.DataFrame```s, corresponding to ids where no heat pump is installed and
+  ids where the only device is measured is a heat pump (heat pump load)
+* Each of these pickled ```pandas.DataFrame```s contains columns: ```id, datetime, load```
+* Each ```pandas.DataFrame``` contains one month of data or the usecase must be reconfigured
+
+
+  
