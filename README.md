@@ -29,14 +29,18 @@ This includes minimal stages of preprocessing, model training and evaluation. Fu
 ### Notes on input data for heat pump detection
 * Data is expected to be in the form of distinct pickeled ```pandas.DataFrame```s, corresponding to ids with a heat pump installed and
   ids where no heat pump is installed. 
-* Each of these pickled ```pandas.DataFrame```s contains columns: ```id, datetime, load```
+* Each of these pickled ```pandas.DataFrame```s contains columns: ```id, timestamp, value_kwh```
 * Each ```pandas.DataFrame``` contains one month of data or the usecase must be reconfigured
+* A ```weather.p``` must be present containing at least columns ```timestamp, temp```, where ```timestamp``` 
+  format and content should ideally match timestamps from consumption data. 
 
 ### Notes on input data for heat pump load disaggregation
 * Data is expected to be in the form of distinct pickeled ```pandas.DataFrame```s, corresponding to ids where no heat pump is installed and
   ids where the only device is measured is a heat pump (heat pump load)
-* Each of these pickled ```pandas.DataFrame```s contains columns: ```id, datetime, load```
+* Each of these pickled ```pandas.DataFrame```s contains columns: ```id, timestamp, value_kwh```
 * Each ```pandas.DataFrame``` contains one month of data or the usecase must be reconfigured
+* A ```weather.p``` must be present containing at least columns ```timestamp, temp```, where ```timestamp``` 
+  format and content should ideally match timestamps from consumption data. 
 
 ## How to run
 * Store raw files as described above in  ```data/raw```
