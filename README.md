@@ -25,8 +25,7 @@ This includes minimal stages of preprocessing, model training and evaluation. Fu
     * disaggregation model training   
 
    ![Alt text](usecases.png?raw=true "usecases")
-
-* There is no guarantee for correctness in any of the code and all results should be checked for sanity.    
+  
 
 ### Notes on input data for heat pump detection
 * Data is expected to be in the form of distinct pickeled ```pandas.DataFrame```s, corresponding to ids with a heat pump installed and
@@ -41,3 +40,5 @@ This includes minimal stages of preprocessing, model training and evaluation. Fu
 * Each ```pandas.DataFrame``` contains one month of data or the usecase must be reconfigured
 
 
+
+> :warning: **There is no guarantee for correctness in any of the code and all results should be checked sceptically!**
