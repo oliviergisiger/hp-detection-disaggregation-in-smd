@@ -40,8 +40,8 @@ This includes minimal stages of preprocessing, model training and evaluation. Fu
 * Each ```pandas.DataFrame``` contains one month of data or the usecase must be reconfigured
 
 
-
-
+\
+\
 
 > [!WARNING]
 > **There is no guarantee for correctness in any of the code and all results should be checked sceptically!**
