@@ -46,4 +46,7 @@ This includes minimal stages of preprocessing, model training and evaluation. Fu
 
 
 > [!WARNING]
-> **There is no guarantee for correctness in any of the code and all results should be checked sceptically!**
+> This repository contains code written by a student and is intended for educational purposes only. The code may contain errors, bugs, or other issues. 
+**USE AT YOUR OWN RISK.**
+> By using this code, you agree that you understand that it is provided "as is" without any warranties or guarantees of any kind, either express or implied, including but not limited to the implied warranties of merchantability and fitness for a particular purpose.
+If you find any errors or issues, please feel free to open an issue or submit a pull request.
