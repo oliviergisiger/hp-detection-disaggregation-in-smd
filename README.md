@@ -19,7 +19,7 @@
     * data preprocessing
     * detection model training
     * disaggregation model training
-   
+* There is no guarantee for correctness in an of the code and all results should be checked for sanity.    
 
 ### Notes on input data for heat pump detection
 * Data is expected to be in the form of distinct pickeled ```pandas.DataFrame```s, corresponding to ids with a heat pump installed and
@@ -34,4 +34,3 @@
 * Each ```pandas.DataFrame``` contains one month of data or the usecase must be reconfigured
 
 
-  
