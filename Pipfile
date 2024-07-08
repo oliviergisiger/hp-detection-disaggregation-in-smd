@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+numpy = "*"
+pandas = "*"
+tensorflow-macos = "*"
+keras-tcn = "==3.5.0"
+scikit-learn = "*"
+keras = "==2.15.0"
+jupyterlab = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
