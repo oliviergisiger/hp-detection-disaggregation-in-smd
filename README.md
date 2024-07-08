@@ -1,4 +1,7 @@
 # Heat Pump Detection and Load Disaggregation in Smart Meter Data
+This repo contains code for training models that detect heat pumps and disaggregate their load from aggregated Smart Meter Data (SMD). 
+This includes minimal stages of preprocessing, model training and evaluation. Further, pretrained ```tensorflow``` models and scalers are included.
+
 
 ## Basic repo structure:
 ```
@@ -19,7 +22,7 @@
     * data preprocessing
     * detection model training
     * disaggregation model training
-* There is no guarantee for correctness in an of the code and all results should be checked for sanity.    
+* There is no guarantee for correctness in any of the code and all results should be checked for sanity.    
 
 ### Notes on input data for heat pump detection
 * Data is expected to be in the form of distinct pickeled ```pandas.DataFrame```s, corresponding to ids with a heat pump installed and
