@@ -42,7 +42,6 @@ This includes minimal stages of preprocessing, model training and evaluation. Fu
 
 \
 
-\
 
 > [!WARNING]
 > **There is no guarantee for correctness in any of the code and all results should be checked sceptically!**
