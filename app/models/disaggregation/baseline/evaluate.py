@@ -2,7 +2,7 @@ import numpy as np
 import pickle
 from sklearn import metrics
 
-from models.models_load_disaggregation.baseline.baseline_model import BaselineDisaggregatior
+from models.disaggregation.baseline.baseline_model import BaselineDisaggregatior
 
 
 if __name__ == '__main__':

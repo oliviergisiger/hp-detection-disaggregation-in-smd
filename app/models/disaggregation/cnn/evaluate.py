@@ -1,7 +1,7 @@
 import pickle
 import sklearn.metrics as metrics
 
-from models.models_load_disaggregation.cnn.model import DisaggregationConvNet
+from models.disaggregation.cnn.model import DisaggregationConvNet
 
 
 LOAD_MODEL_PATH = 'models/models_load_disaggregation/cnn/trained_models/'

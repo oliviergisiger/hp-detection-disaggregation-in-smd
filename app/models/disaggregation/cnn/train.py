@@ -1,5 +1,5 @@
 import pickle
-from models.models_load_disaggregation.cnn.model import DisaggregationConvNet
+from models.disaggregation.cnn.model import DisaggregationConvNet
 import numpy as np
 
 TRAIN_FILE = '../data/model_input/ckw/disaggregation/ts_672_672_train.p'
