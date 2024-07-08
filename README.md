@@ -21,8 +21,10 @@ This includes minimal stages of preprocessing, model training and evaluation. Fu
 * There are multiple usecaeses that can/must be runned:
     * data preprocessing
     * detection model training
-    * disaggregation model training
+    * disaggregation model training   
+   <br>
    ![Alt text](usecases.png?raw=true "usecases")
+   <br>
 * There is no guarantee for correctness in any of the code and all results should be checked for sanity.    
 
 ### Notes on input data for heat pump detection
