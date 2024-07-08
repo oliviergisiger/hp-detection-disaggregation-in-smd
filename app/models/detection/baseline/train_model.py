@@ -1,6 +1,6 @@
 import pickle
 
-from models.models_hp_detection.baseline.baseline_model import BaselineClassifier
+from models.detection.baseline.baseline_model import BaselineClassifier
 
 
 if __name__ == '__main__':
